@@ -3,12 +3,9 @@ import { siteData } from '../data/siteData';
 
 export default function Footer() {
   const [lang, setLang] = useState('en');
-  const [song, setSong] = useState({
-    title: 'Kontrasmu Bisu',
-    artist: 'Iwan Fals',
-    albumArt: null,
-    isPlaying: false,
-  });
+  const [song, setSong] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const savedLang = localStorage.getItem('lang') || 'en';
@@ -27,29 +24,38 @@ export default function Footer() {
   useEffect(() => {
     const fetchLastFm = async () => {
       try {
-        const user = 'Ivannnaff_';
-        const apiKey = 'f8957c344f3570a77bb020fd196bcd02';
-        const res = await fetch(
-          `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${user}&api_key=${apiKey}&format=json&limit=1`
-        );
+        setLoading(true);
+        const res = await fetch('/api/lastfm.json');
         const data = await res.json();
-        const track = data?.recenttracks?.track?.[0];
         
-        if (track) {
+        if (data.error) {
+          setError(data.error);
           setSong({
-            title: track.name,
-            artist: track.artist['#text'] || track.artist,
-            albumArt: track.image?.[2]?.['#text'] || null,
-            isPlaying: track['@attr']?.nowplaying === 'true',
+            title: 'No recent tracks',
+            artist: 'Play something on Last.fm',
+            albumArt: null,
+            isPlaying: false,
           });
+        } else {
+          setSong(data);
+          setError(null);
         }
       } catch (err) {
         console.error('Failed to fetch Last.fm data:', err);
+        setError('Connection error');
+        setSong({
+          title: 'Connection error',
+          artist: 'Failed to load track',
+          albumArt: null,
+          isPlaying: false,
+        });
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchLastFm();
-    const interval = setInterval(fetchLastFm, 60000);
+    const interval = setInterval(fetchLastFm, 30000);
     return () => clearInterval(interval);
   }, []);
 
@@ -73,23 +79,30 @@ export default function Footer() {
           </div>
           
           <div className="flex items-center gap-3 p-2.5 rounded-xl border border-border bg-surface/30 max-w-xs">
-            {song.albumArt ? (
+            {song?.albumArt ? (
               <img 
                 src={song.albumArt} 
-                alt={song.title}
+                alt={`${song.title} by ${song.artist}`}
                 className="w-10 h-10 rounded-lg object-cover flex-shrink-0"
               />
             ) : (
               <div className="w-10 h-10 rounded-lg bg-border flex-shrink-0 flex items-center justify-center text-muted text-xs">
-                ♫
+                {loading ? '...' : '♫'}
               </div>
             )}
             <div className="min-w-0">
               <p className="text-[10px] uppercase text-muted tracking-wider">
-                {song.isPlaying ? 'Now Playing' : 'Last Played'}
+                {loading ? 'Loading...' : song?.isPlaying ? 'Now Playing' : 'Last Played'}
               </p>
-              <p className="text-xs font-medium text-fg truncate">{song.title}</p>
-              <p className="text-[11px] text-muted truncate">{song.artist}</p>
+              <p className="text-xs font-medium text-fg truncate">
+                {loading ? 'Loading...' : song?.title}
+              </p>
+              <p className="text-[11px] text-muted truncate">
+                {loading ? '...' : song?.artist}
+              </p>
+              {error && !loading && (
+                <p className="text-[9px] text-muted/60 italic">({error})</p>
+              )}
             </div>
           </div>
         </div>
