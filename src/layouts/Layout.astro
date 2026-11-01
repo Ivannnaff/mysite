@@ -19,17 +19,7 @@ const { title = "Ivan Akbar Alfahrezi" } = Astro.props;
     </script>
   </head>
   <body class="pt-24 pb-16 selection:bg-accent/20 selection:text-accent">
-    <FloatingNavbar client:load />
+    <FloatingNavbar client:only="react" />
     <slot />
-
-    <script is:inline>
-      window.addEventListener('langchange', (e) => {
-        const lang = e.detail;
-        document.querySelectorAll('[data-i18n-key]').forEach(el => {
-          // can update dynamic texts if needed
-        });
-        window.location.reload();
-      });
-    </script>
   </body>
 </html>

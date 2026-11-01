@@ -1,0 +1,76 @@
+import React, { useState, useEffect } from 'react';
+import { siteData } from '../data/siteData';
+import { translations } from '../translations';
+
+export default function HomePage() {
+  const [lang, setLang] = useState('en');
+
+  useEffect(() => {
+    const savedLang = localStorage.getItem('lang') || 'en';
+    setLang(savedLang);
+
+    const handleStorage = (e) => {
+      if (e.key === 'lang') {
+        setLang(e.newValue || 'en');
+      }
+    };
+
+    window.addEventListener('storage', handleStorage);
+    return () => window.removeEventListener('storage', handleStorage);
+  }, []);
+
+  const t = translations[lang] || translations.en;
+
+  return (
+    <main className="max-w-2xl mx-auto px-6 pt-16 pb-24">
+      {/* Hero Section */}
+      <section className="mb-20">
+        <h1 className="text-5xl sm:text-6xl font-serif leading-tight tracking-tight mb-6">
+          {siteData.name}
+        </h1>
+        <p className="text-lg sm:text-xl text-muted mb-8">
+          {siteData.role}
+        </p>
+        <p className="text-base leading-relaxed text-fg/90 mb-10 max-w-2xl">
+          {t.home.bio}
+        </p>
+        
+        <div className="flex flex-wrap gap-3 mb-12">
+          <a href="/resume" className="px-6 py-2.5 rounded-full bg-fg text-bg font-medium text-sm transition-all hover:scale-105 active:scale-95">
+            {t.home.viewCv}
+          </a>
+          <a href="#experience" className="px-6 py-2.5 rounded-full border border-border text-fg font-medium text-sm transition-all hover:bg-surface">
+            {t.home.viewProjects}
+          </a>
+        </div>
+      </section>
+
+      {/* Scenery Illustration */}
+      <div className="w-full h-48 bg-surface/30 rounded-3xl border border-border/50 mb-20 overflow-hidden flex items-end justify-center relative">
+        <svg width="100%" height="100%" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-40 grayscale dark:invert transition-all duration-700">
+          <path d="M0 180C150 140 300 190 450 160C600 130 750 170 800 150V200H0V180Z" fill="var(--accent)" opacity="0.1" />
+          <path d="M0 190C100 170 200 195 300 185C400 175 500 190 600 180C700 170 800 190 800 190V200H0V190Z" fill="var(--accent)" opacity="0.2" />
+          <circle cx="650" cy="50" r="30" fill="var(--accent)" opacity="0.05" />
+        </svg>
+      </div>
+
+      {/* Experience Section */}
+      <section id="experience" className="mb-20">
+        <h2 className="text-2xl font-serif mb-10">{t.home.experience}</h2>
+        <div className="space-y-8">
+          {siteData.experience.map((exp, idx) => (
+            <div key={idx} className="group">
+              <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-2">
+                <p className="text-base font-medium text-fg">{exp.period}</p>
+              </div>
+              <h3 className="text-lg font-medium text-fg mb-1">
+                {exp.role} at <span className="text-accent">{exp.company}</span>
+              </h3>
+              <p className="text-sm text-muted mb-3">Full-time</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
+  );
+}

@@ -34,27 +34,30 @@ export default function FloatingNavbar() {
     const next = lang === 'en' ? 'id' : 'en';
     setLang(next);
     localStorage.setItem('lang', next);
-    window.dispatchEvent(new CustomEvent('langchange', { detail: next }));
+    window.dispatchEvent(new StorageEvent('storage', {
+      key: 'lang',
+      newValue: next,
+    }));
   };
 
-  const t = translations[lang]?.nav || translations.en.nav;
+  const t = translations[lang] || translations.en;
 
   const navItems = [
-    { href: '/', label: t.home },
-    { href: '/now', label: t.now },
-    { href: '/uses', label: t.uses },
+    { href: '/', label: t.nav.home },
+    { href: '/now', label: t.nav.now },
+    { href: '/uses', label: t.nav.uses },
     { href: '/uses', label: 'TIL' },
-    { href: '/contact', label: t.contact },
+    { href: '/contact', label: t.nav.contact },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 pointer-events-none">
+    <header className="fixed top-0 left-0 right-0 z-[100] flex justify-center pt-6">
       <div className="max-w-2xl w-full px-6 flex justify-center">
         <nav
-          className={`pointer-events-auto flex items-center justify-between w-full transition-all duration-300 ease-out ${
+          className={`flex items-center justify-between w-full transition-all duration-300 ease-out ${
             scrolled
-              ? 'px-6 py-2.5 rounded-2xl bg-surface/90 backdrop-blur-md shadow-lg shadow-black/5 dark:shadow-black/20 scale-[0.98] max-w-lg border-0'
-              : 'px-0 py-1 bg-transparent shadow-none border-0'
+              ? 'px-6 py-2.5 rounded-2xl bg-surface/90 backdrop-blur-md shadow-lg shadow-black/5 dark:shadow-black/20 scale-[0.98] max-w-lg'
+              : 'px-0 py-1 bg-transparent shadow-none'
           }`}
         >
           <div className="flex items-center gap-6 text-sm font-medium">
@@ -71,8 +74,9 @@ export default function FloatingNavbar() {
 
           <div className="flex items-center gap-2">
             <button
-              onClick={toggleLang}
-              className="flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-mono text-muted hover:text-fg hover:bg-border/40 transition-all duration-200 uppercase"
+              type="button"
+              onMouseDown={toggleLang}
+              className="flex items-center gap-1 px-2.5 py-1.5 rounded-md text-xs font-mono text-muted hover:text-fg hover:bg-border/40 transition-all duration-200 uppercase cursor-pointer select-none"
               aria-label="Translate"
               title="Switch Language"
             >
@@ -80,8 +84,9 @@ export default function FloatingNavbar() {
               <span>{lang}</span>
             </button>
             <button
+              type="button"
               onClick={toggleTheme}
-              className="p-2 rounded-md text-muted hover:text-fg hover:bg-border/40 transition-all duration-200"
+              className="p-2 rounded-md text-muted hover:text-fg hover:bg-border/40 transition-all duration-200 cursor-pointer"
               aria-label="Toggle Theme"
             >
               {theme === 'dark' ? <Sun size={15} /> : <Moon size={15} />}

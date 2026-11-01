@@ -2,57 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import { siteData } from '../data/siteData';
 import Footer from '../components/Footer.jsx';
+import HomePage from '../components/HomePage.jsx';
 ---
 
 <Layout title={`${siteData.name} | ${siteData.role}`}>
-  <main class="max-w-2xl mx-auto px-6 pt-16 pb-24">
-    <!-- Hero Section -->
-    <section class="mb-20">
-      <h1 class="text-5xl sm:text-6xl font-serif leading-tight tracking-tight mb-6">
-        {siteData.name}
-      </h1>
-      <p class="text-lg sm:text-xl text-muted mb-8">
-        {siteData.role}
-      </p>
-      <p class="text-base leading-relaxed text-fg/90 mb-10 max-w-2xl">
-        {siteData.bio}
-      </p>
-      
-      <div class="flex flex-wrap gap-3 mb-12">
-        <a href="/resume" class="px-6 py-2.5 rounded-full bg-fg text-bg font-medium text-sm transition-all hover:scale-105 active:scale-95">
-          View CV
-        </a>
-        <a href="#experience" class="px-6 py-2.5 rounded-full border border-border text-fg font-medium text-sm transition-all hover:bg-surface">
-          View Projects
-        </a>
-      </div>
-    </section>
-
-    <!-- Scenery Illustration -->
-    <div class="w-full h-48 bg-surface/30 rounded-3xl border border-border/50 mb-20 overflow-hidden flex items-end justify-center relative">
-       <svg width="100%" height="100%" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="opacity-40 grayscale dark:invert transition-all duration-700">
-         <path d="M0 180C150 140 300 190 450 160C600 130 750 170 800 150V200H0V180Z" fill="var(--accent)" opacity="0.1" />
-         <path d="M0 190C100 170 200 195 300 185C400 175 500 190 600 180C700 170 800 190 800 190V200H0V190Z" fill="var(--accent)" opacity="0.2" />
-         <circle cx="650" cy="50" r="30" fill="var(--accent)" opacity="0.05" />
-       </svg>
-    </div>
-
-    <!-- Experience Section -->
-    <section id="experience" class="mb-20">
-      <h2 class="text-2xl font-serif mb-10">Experience</h2>
-      <div class="space-y-8">
-        {siteData.experience.map((exp) => (
-          <div class="group">
-            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-2">
-              <p class="text-base font-medium text-fg">{exp.period}</p>
-            </div>
-            <h3 class="text-lg font-medium text-fg mb-1">{exp.role} at <span class="text-accent">{exp.company}</span></h3>
-            <p class="text-sm text-muted mb-3">Full-time</p>
-          </div>
-        ))}
-      </div>
-    </section>
-  </main>
-  
+  <HomePage client:only="react" />
   <Footer />
 </Layout>
