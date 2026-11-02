@@ -70,5 +70,20 @@ export const siteData = {
       { label: "Instagram", href: "https://instagram.com/ivannnaff", external: true },
       { label: "Email", href: "mailto:ivanalfa647@gmail.com" },
     ]
-  }
+  },
+
+  techStack: [
+    { name: "Laravel", icon: "Code2", status: "Using" },
+    { name: "React", icon: "React", status: "Using" },
+    { name: "Next.js", icon: "Code2", status: "Using" },
+    { name: "TypeScript", icon: "FileTypeScript", status: "Using" },
+    { name: "Tailwind CSS", icon: "Paintbrush", status: "Using" },
+    { name: "PostgreSQL", icon: "Database", status: "Using" },
+    { name: "Vite", icon: "Rocket", status: "Using" },
+    { name: "Astro", icon: "Sparkles", status: "Using" },
+    { name: "Bun", icon: "Zap", status: "Learning" },
+    { name: "Elysia", icon: "Zap", status: "Learning" },
+    { name: "Python", icon: "Code2", status: "Learning" },
+    { name: "System Design", icon: "Layers", status: "Learning" }
+  ]
 };
