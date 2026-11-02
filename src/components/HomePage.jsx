@@ -68,6 +68,40 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Featured Work Section */}
+      <section className="mb-20">
+        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted mb-10">
+          {t.home.featuredWork || 'FEATURED WORK'}
+        </p>
+        
+        <div className="grid grid-cols-1 gap-6">
+          {siteData.projects.map((project, idx) => (
+            <a 
+              key={idx}
+              href={project.url} 
+              target="_blank" 
+              rel="noreferrer" 
+              className="group block p-6 rounded-2xl border border-border/50 bg-surface/10 hover:bg-surface/30 hover:border-border transition-all"
+            >
+              <div className="flex justify-between items-start mb-4">
+                <h3 className="text-lg font-serif group-hover:text-accent transition-colors">
+                  {project.name}
+                </h3>
+                <span className="font-mono text-[10px] uppercase tracking-wider text-muted py-1 px-2 rounded-md bg-border/30">
+                  {project.category}
+                </span>
+              </div>
+              <p className="text-sm text-muted leading-relaxed mb-6">
+                {project.desc}
+              </p>
+              <div className="flex items-center text-xs font-medium gap-1">
+                View Project <span className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
       {/* Scenery Illustration */}
       <div className="w-full h-48 bg-surface/30 rounded-3xl border border-border/50 mb-20 overflow-hidden flex items-end justify-center relative">
         <svg width="100%" height="100%" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-40 grayscale dark:invert transition-all duration-700">
