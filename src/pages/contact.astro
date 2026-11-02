@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { translations } from '../translations';
+import Footer from '../components/Footer.jsx';
 const t = translations.en;
 ---
 
@@ -27,6 +28,7 @@ const t = translations.en;
           </a>
         </div>
       ))}
-    </div>
-  </main>
+        </div>
+      </main>
+      <Footer client:only="react" />
 </Layout>

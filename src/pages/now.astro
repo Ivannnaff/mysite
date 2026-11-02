@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { translations } from '../translations';
+import { siteData } from '../data/siteData';
+import TechBadge from '../components/TechBadge.jsx';
+import Footer from '../components/Footer.jsx';
 const t = translations.en;
 ---
 
@@ -10,9 +13,53 @@ const t = translations.en;
       <h1 class="text-2xl font-medium tracking-tight mb-3">{t.now.title}</h1>
       <p class="text-[#2a2a27] dark:text-[#999691] leading-relaxed">{t.now.subtitle}</p>
     </div>
-    <div class="space-y-6 text-sm text-[#3a3a36] dark:text-[#999691]">
-      <p>Currently focused on building scalable web applications with Laravel, React, and Astro, while completing my undergraduate studies.</p>
-    </div>
+
+    {/* Focus */}
+    <section class="mb-16">
+      <h2 class="font-mono text-[10px] uppercase tracking-widest text-[#6b6b66] dark:text-[#555451] mb-3">{t.now.focus}</h2>
+      <p class="text-sm text-[#3a3a36] dark:text-[#999691] leading-relaxed">{t.now.focusDesc}</p>
+    </section>
+
+    {/* Building */}
+    <section class="mb-16">
+      <h2 class="font-mono text-[10px] uppercase tracking-widest text-[#6b6b66] dark:text-[#555451] mb-3">{t.now.building}</h2>
+      <p class="text-sm text-[#3a3a36] dark:text-[#999691] mb-3">{t.now.buildingDesc}</p>
+      <div class="space-y-3">
+        {siteData.projects.map((project) => (
+          <div key={project.name} class="flex items-start gap-3">
+            <span class="text-sm font-mono text-[#6b6b66] dark:text-[#555451] shrink-0">•</span>
+            <a href={project.url} target="_blank" rel="noopener noreferrer" class="text-sm text-[#111110] dark:text-[#e8e6e1] hover:text-[#c4623a] transition-colors font-medium">
+              {project.name}
+            </a>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* Learning / Tech Stack */}
+    <section class="mb-16">
+      <h2 class="font-mono text-[10px] uppercase tracking-widest text-[#6b6b66] dark:text-[#555451] mb-3">{t.now.learning}</h2>
+      <div class="flex flex-wrap gap-3">
+        {siteData.techStack.filter((item) => item.status === 'Learning').map((item) => (
+          <TechBadge key={item.name} name={item.name} icon={item.icon} status={item.status} client:load />
+        ))}
+      </div>
+    </section>
+
+    {/* Open to */}
+    <section class="mb-16">
+      <h2 class="font-mono text-[10px] uppercase tracking-widest text-[#6b6b66] dark:text-[#555451] mb-3">{t.now.openTo}</h2>
+      <ul class="space-y-2 text-sm text-[#3a3a36] dark:text-[#999691]">
+        {t.now.openToList.map((item) => (
+          <li key={item} class="flex items-start gap-2">
+            <span class="text-[#6b6b66] dark:text-[#555451] font-mono text-xs">•</span>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </section>
+
     <p class="mt-12 text-xs font-mono text-[#6b6b66] dark:text-[#555451]">{t.now.footer}</p>
   </main>
+  <Footer client:only="react" />
 </Layout>
