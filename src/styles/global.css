@@ -4,9 +4,9 @@
 
 @layer base {
   :root {
-    --bg: #faf9f5;
-    --surface: #f0eee6;
-    --border: #e8e6dc;
+    --bg: #f7f6f0;
+    --surface: #edece4;
+    --border: #e2e0d6;
     --fg: #141413;
     --muted: #6b6a63;
     --accent: #d97757;

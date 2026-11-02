@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { siteData } from '../data/siteData';
 import { translations } from '../translations';
+import { Mail, Globe, ExternalLink } from 'lucide-react';
 
 export default function HomePage() {
   const [lang, setLang] = useState('en');
@@ -21,27 +22,49 @@ export default function HomePage() {
 
   const t = translations[lang] || translations.en;
 
+  const socialLinks = [
+    { label: 'GitHub', href: siteData.links.connect[0].href, icon: ExternalLink },
+    { label: 'LinkedIn', href: siteData.links.connect[1].href, icon: ExternalLink },
+    { label: 'Email', href: siteData.links.connect[3].href, icon: Mail },
+  ];
+
   return (
     <main className="max-w-2xl mx-auto px-6 pt-16 pb-24">
       {/* Hero Section */}
       <section className="mb-20">
-        <h1 className="text-5xl sm:text-6xl font-serif leading-tight tracking-tight mb-6">
-          {siteData.name}
+        <h1 className="text-2xl sm:text-3xl font-medium leading-tight tracking-tight mb-2">
+          <span className="text-accent">{siteData.firstName}</span> {siteData.lastName}
         </h1>
-        <p className="text-lg sm:text-xl text-muted mb-8">
+        
+        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted mb-6">
           {siteData.role}
         </p>
+
         <p className="text-base leading-relaxed text-fg/90 mb-10 max-w-2xl">
           {t.home.bio}
         </p>
-        
-        <div className="flex flex-wrap gap-3 mb-12">
-          <a href="/resume" className="px-6 py-2.5 rounded-full bg-fg text-bg font-medium text-sm transition-all hover:scale-105 active:scale-95">
-            {t.home.viewCv}
-          </a>
-          <a href="#experience" className="px-6 py-2.5 rounded-full border border-border text-fg font-medium text-sm transition-all hover:bg-surface">
-            {t.home.viewProjects}
-          </a>
+
+        <div className="flex items-center gap-2 text-xs text-muted mb-8">
+          <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+          <span>{t.home.availability}</span>
+        </div>
+
+        <div className="flex flex-wrap gap-x-6 gap-y-4">
+          {socialLinks.map((link) => {
+            const Icon = link.icon;
+            return (
+              <a 
+                key={link.label}
+                href={link.href} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="text-xs font-medium hover:text-accent transition-colors flex items-center gap-2 group"
+              >
+                <Icon size={14} className="text-muted group-hover:text-accent transition-colors" />
+                {link.label}
+              </a>
+            );
+          })}
         </div>
       </section>
 
@@ -56,17 +79,17 @@ export default function HomePage() {
 
       {/* Experience Section */}
       <section id="experience" className="mb-20">
-        <h2 className="text-2xl font-serif mb-10">{t.home.experience}</h2>
+        <h2 className="text-xl font-serif mb-10">{t.home.experience}</h2>
         <div className="space-y-8">
           {siteData.experience.map((exp, idx) => (
             <div key={idx} className="group">
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-2">
-                <p className="text-base font-medium text-fg">{exp.period}</p>
+                <p className="text-sm font-medium text-fg">{exp.period}</p>
               </div>
-              <h3 className="text-lg font-medium text-fg mb-1">
+              <h3 className="text-base font-medium text-fg mb-1">
                 {exp.role} at <span className="text-accent">{exp.company}</span>
               </h3>
-              <p className="text-sm text-muted mb-3">Full-time</p>
+              <p className="text-xs text-muted mb-3">Full-time</p>
             </div>
           ))}
         </div>

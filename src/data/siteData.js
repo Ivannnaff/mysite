@@ -1,5 +1,7 @@
 export const siteData = {
   name: "Ivan Akbar Alfahrezi",
+  firstName: "Ivan",
+  lastName: "Akbar Alfahrezi",
   role: "Full-Stack Web Developer",
   bio: "I'm a full-stack web developer building apps with Laravel, React, and Next.js, and I'm currently an IT undergraduate at Universitas PGRI Semarang.",
   location: "Semarang, Indonesia",
@@ -23,9 +25,24 @@ export const siteData = {
   projects: [
     {
       name: "Task Manager AI",
-      tech: "React, Node.js, AI",
-      desc: "A college task manager with a drag-and-drop Kanban board and AI assistant.",
-      url: "https://github.com/Ivannnaff"
+      category: "Web App · AI",
+      tech: "React, TypeScript, AI",
+      desc: "A college task manager with a drag-and-drop Kanban board and AI assistant to help students manage their workload effectively.",
+      url: "https://github.com/Ivannnaff/task-manager"
+    },
+    {
+      name: "Nusantara Hub",
+      category: "Python",
+      tech: "Python",
+      desc: "A collaborative hub project built with Python to explore data and community engagement features.",
+      url: "https://github.com/Ivannnaff/nusantara-hub"
+    },
+    {
+      name: "Web KKL",
+      category: "Astro · Frontend",
+      tech: "Astro, Tailwind",
+      desc: "An information and documentation portal for KKL (Kuliah Kerja Lapangan) activities built with Astro for fast performance.",
+      url: "https://github.com/Ivannnaff/web-kkl"
     }
   ],
   
@@ -37,9 +54,11 @@ export const siteData = {
   
   links: {
     thisSite: [
+      { label: "Home", href: "/" },
       { label: "Now", href: "/now" },
       { label: "Uses", href: "/uses" },
-      { label: "Resume", href: "/resume" },
+      { label: "TIL", href: "/uses" },
+      { label: "Contact", href: "/contact" },
     ],
     resources: [
       { label: "Resume", href: "/resume" },
