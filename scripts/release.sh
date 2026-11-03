@@ -38,7 +38,7 @@ echo ">> 6. Push"
 git push -u origin "$BRANCH"
 
 echo ">> 7. Create PR"
-PR_URL=$(gh pr create --base main --head "$BRANCH" --title "$MSG" --body "Automated release via scripts/release.sh." --url)
+PR_URL=$(gh pr create --base main --head "$BRANCH" --title "$MSG" --body "Automated release via scripts/release.sh.")
 PR_NUMBER=$(gh pr view "$PR_URL" --json number --jq .number)
 echo "PR #$PR_NUMBER: $PR_URL"
 
