@@ -25,22 +25,22 @@ export const siteData = {
   projects: [
     {
       name: "Task Manager AI",
-      category: "Web App · AI",
-      tech: "React, TypeScript, AI",
+      category: "Creator",
+      tech: ["React", "TypeScript", "Tailwind", "AI"],
       desc: "A college task manager with a drag-and-drop Kanban board and AI assistant to help students manage their workload effectively.",
       url: "https://github.com/Ivannnaff/task-manager"
     },
     {
       name: "Nusantara Hub",
-      category: "Python",
-      tech: "Python",
+      category: "Creator",
+      tech: ["Python", "Flask", "PostgreSQL"],
       desc: "A collaborative hub project built with Python to explore data and community engagement features.",
       url: "https://github.com/Ivannnaff/nusantara-hub"
     },
     {
       name: "Web KKL",
-      category: "Astro · Frontend",
-      tech: "Astro, Tailwind",
+      category: "Creator",
+      tech: ["Astro", "Tailwind CSS"],
       desc: "An information and documentation portal for KKL (Kuliah Kerja Lapangan) activities built with Astro for fast performance.",
       url: "https://github.com/Ivannnaff/web-kkl"
     }
@@ -72,18 +72,18 @@ export const siteData = {
     ]
   },
 
-  techStack: [
+techStack: [
     { name: "Laravel", icon: "Code2", status: "Using" },
     { name: "React", icon: "React", status: "Using" },
     { name: "Next.js", icon: "Code2", status: "Using" },
-    { name: "TypeScript", icon: "FileTypeScript", status: "Using" },
+    { name: "TypeScript", icon: "FileCode", status: "Using" },
     { name: "Tailwind CSS", icon: "Paintbrush", status: "Using" },
     { name: "PostgreSQL", icon: "Database", status: "Using" },
     { name: "Vite", icon: "Rocket", status: "Using" },
     { name: "Astro", icon: "Sparkles", status: "Using" },
-    { name: "Bun", icon: "Zap", status: "Learning" },
-    { name: "Elysia", icon: "Zap", status: "Learning" },
-    { name: "Python", icon: "Code2", status: "Learning" },
-    { name: "System Design", icon: "Layers", status: "Learning" }
+    { name: "Python", icon: "Code2", status: "Learning", since: "2026-09", desc: "Exploring data and community engagement through a collaborative hub project." },
+    { name: "System Design", icon: "Layers", status: "Learning", since: "2026-09", desc: "Studying scalable architecture patterns and design principles for building robust systems." },
+    { name: "C++", icon: "Code2", status: "Practicing", since: "2026-10", desc: "Practicing low-level programming through a card identification utility." },
+    { name: "PHP", icon: "Code2", status: "Practicing", since: "2026-10", desc: "Building backend services for a local business information portal." }
   ]
 };

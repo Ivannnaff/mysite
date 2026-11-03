@@ -14,7 +14,7 @@ const ICON_MAP = {
   Layers,
 };
 
-export default function TechBadge({ name, icon, status }) {
+export default function TechBadge({ name, icon, status, since }) {
   const Icon = ICON_MAP[icon] || Code2;
   const statusVariant = status === 'Learning' ? 'bg-accent/10 text-accent border-accent/30' : 'bg-surface/10 text-fg border-border/50';
 
@@ -25,6 +25,7 @@ export default function TechBadge({ name, icon, status }) {
       {status === 'Learning' && (
         <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
       )}
+      {since && <span className="opacity-60">· since {since}</span>}
     </span>
   );
 }

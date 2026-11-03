@@ -25,12 +25,40 @@ export const translations = {
       title: "Now",
       subtitle: "A snapshot of what I'm focused on at this point in life.",
       footer: "Updated recently from Semarang, Indonesia.",
+      lastUpdated: "Last updated Nov 03 2026",
       focus: "Focus",
-      focusDesc: "Client web applications, end to end. Building full-stack web solutions for clients while completing my undergraduate studies at Universitas PGRI Semarang.",
+      focusHeading: "Client web applications, end to end.",
+      focusDesc: "IT undergraduate at Universitas PGRI Semarang, building full-stack web solutions with Laravel, React, and Astro. Taking on fixed-scope projects and long-term retainers. Looking for internship opportunities.",
       building: "Building",
-      buildingDesc: "Active projects in production.",
+      buildingHeading: "Active projects in production.",
+      buildingDesc: "A college task manager with a drag-and-drop Kanban board and AI assistant, a collaborative hub project exploring data and community engagement, and an information portal for KKL activities built with Astro for fast performance.",
       learning: "Learning",
+      learningHeading: "Currently learning.",
+      learningDesc: "A few directions I'm going deeper into this year.",
+      learningList: [
+        {
+          title: "System Architecture",
+          since: "2026-09",
+          desc: "How to structure applications that stay maintainable as they grow — boundaries, trade-offs, and patterns for scaling services.",
+        },
+        {
+          title: "UI/UX Engineering",
+          since: "2026-09",
+          desc: "Turning design intent into interfaces that feel calm and predictable: layout systems, motion, accessibility, and the details people notice.",
+        },
+        {
+          title: "Database Optimization",
+          since: "2026-10",
+          desc: "Reading query plans, shaping indexes, and modeling data so the slow parts of an application stay out of the way.",
+        },
+      ],
+      listeningLabel: "Listening",
+      listening: {
+        title: "On repeat.",
+        empty: "Not playing anything right now.",
+      },
       openTo: "Open to",
+      openToHeading: "New work and deep contributions.",
       openToList: [
         "Client work, full-time or freelance",
         "Contributing to open source",
@@ -38,10 +66,7 @@ export const translations = {
         "Collaboration on interesting projects",
       ],
       techStack: "Tech Stack",
-      listening: {
-        title: "Listening to",
-        empty: "Not playing anything right now.",
-      }
+      handwritten: "This page is written by hand and updated whenever the answer changes.",
     },
     uses: {
       title: "Uses",
@@ -129,12 +154,40 @@ export const translations = {
       title: "Sekarang",
       subtitle: "Sebaran dari apa yang sedang saya fokuskan saat ini.",
       footer: "Terakhir diperbarui dari Semarang, Indonesia.",
+      lastUpdated: "Terakhir diperbarui 03 Nov 2026",
       focus: "Fokus",
+      focusHeading: "Aplikasi web klien, end to end.",
       focusDesc: "Aplikasi web klien, end to end. Membangun solusi web full-stack untuk klien sambil menyelesaikan pendidikan S1 di Universitas PGRI Semarang.",
       building: "Membangun",
+      buildingHeading: "Proyek aktif dalam produksi.",
       buildingDesc: "Proyek aktif dalam produksi.",
       learning: "Sedang Belajar",
+      learningHeading: "Sedang dipelajari.",
+      learningDesc: "Beberapa arah yang sedang saya dalami tahun ini.",
+      learningList: [
+        {
+          title: "Arsitektur Sistem",
+          since: "2026-09",
+          desc: "Menyusun aplikasi yang tetap mudah dirawat saat tumbuh — batasan, trade-off, dan pola untuk menskalakan layanan.",
+        },
+        {
+          title: "UI/UX Engineering",
+          since: "2026-09",
+          desc: "Menerjemahkan niat desain menjadi antarmuka yang terasa tenang dan dapat diprediksi: sistem layout, motion, aksesibilitas, dan detail kecil yang terasa.",
+        },
+        {
+          title: "Optimasi Database",
+          since: "2026-10",
+          desc: "Membaca query plan, menyusun indeks, dan memodelkan data agar bagian lambat dari aplikasi tidak mengganggu.",
+        },
+      ],
+      listeningLabel: "Mendengarkan",
+      listening: {
+        title: "Sedang mendengarkan",
+        empty: "Tidak sedang memutar apa pun.",
+      },
       openTo: "Terbuka untuk",
+      openToHeading: "Pekerjaan baru dan kontribusi mendalam.",
       openToList: [
         "Pekerjaan klien, full-time atau freelance",
         "Berkontribusi pada open source",
@@ -142,10 +195,7 @@ export const translations = {
         "Kolaborasi pada proyek menarik",
       ],
       techStack: "Stack Teknologi",
-      listening: {
-        title: "Sedang mendengarkan",
-        empty: "Tidak sedang memutar apa pun.",
-      }
+      handwritten: "Halaman ini ditulis secara manual dan diperbarui jika jawabannya berubah.",
     },
     uses: {
       title: "Alat",
