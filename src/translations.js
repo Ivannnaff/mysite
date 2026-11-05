@@ -77,13 +77,23 @@ export const translations = {
           items: [
             { name: "VS Code", note: "Primary code editor with One Dark Pro theme." },
             { name: "Terminus / Git Bash", note: "Reliable terminal environment on Windows." },
+            { name: "Git & GitHub", note: "Version control and code hosting for every project." },
+            { name: "Vite & Astro", note: "Fast build tooling for modern web apps." },
           ]
         },
         {
           label: "Hardware",
           items: [
             { name: "Custom Laptop", note: "Equipped with 16GB RAM and SSD for fast compiling." },
-            { name: "Mechanical Keyboard", note: "Tactile switches for comfortable typing." }
+            { name: "Mechanical Keyboard", note: "Tactile switches for comfortable typing." },
+            { name: "External Monitor", note: "Extra screen real estate for code and references." },
+          ]
+        },
+        {
+          label: "Productivity",
+          items: [
+            { name: "Notion", note: "Notes, planning, and project tracking in one place." },
+            { name: "Brave", note: "Daily browser with built-in privacy protection." },
           ]
         }
       ]
@@ -205,14 +215,24 @@ export const translations = {
           label: "Pengembangan",
           items: [
             { name: "VS Code", note: "Editor kode utama dengan tema One Dark Pro." },
-            { name: "Git Bash", note: "Lingkungan terminal andalan di Windows." },
+            { name: "Terminus / Git Bash", note: "Lingkungan terminal andalan di Windows." },
+            { name: "Git & GitHub", note: "Version control dan hosting kode untuk setiap proyek." },
+            { name: "Vite & Astro", note: "Build tool cepat untuk aplikasi web modern." },
           ]
         },
         {
           label: "Perangkat",
           items: [
             { name: "Laptop", note: "Dilengkapi RAM 16GB dan SSD untuk kompilasi cepat." },
-            { name: "Mechanical Keyboard", note: "Switch taktil untuk kenyamanan mengetik." }
+            { name: "Mechanical Keyboard", note: "Switch taktil untuk kenyamanan mengetik." },
+            { name: "Monitor Eksternal", note: "Ruang layar tambahan untuk kode dan referensi." },
+          ]
+        },
+        {
+          label: "Produktivitas",
+          items: [
+            { name: "Notion", note: "Catatan, perencanaan, dan pelacakan proyek dalam satu tempat." },
+            { name: "Brave", note: "Browser harian dengan perlindungan privasi bawaan." },
           ]
         }
       ]

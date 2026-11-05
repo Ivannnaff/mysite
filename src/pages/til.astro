@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.jsx';
+import { translations } from '../translations';
+---
+
+<script>
+  // Client-side language watcher for instant updates without reload
+  let currentLang = localStorage.getItem('lang') || 'en';
+  window.addEventListener('storage', (e) => {
+    if (e.key === 'lang' && e.newValue) {
+      window.location.reload();
+    }
+  });
+</script>
+
+<Layout title="TIL / Notes — Ivan Akbar">
+  <main class="max-w-2xl mx-auto px-6 py-16">
+    <div class="mb-12">
+      <h1 class="text-2xl sm:text-3xl font-medium tracking-tight mb-3">
+        TIL & Notes
+      </h1>
+      <p class="text-base text-muted leading-relaxed">
+        Short notes, learnings, and thoughts on software engineering and web development.
+      </p>
+    </div>
+
+    <div class="border-t border-border">
+      <article class="border-b border-border">
+        <a href="#" class="group flex items-baseline gap-3 py-4 sm:gap-4">
+          <time class="w-28 shrink-0 font-mono text-sm whitespace-nowrap text-muted">
+            Nov 04, 2026
+          </time>
+          <span aria-hidden="true" class="text-muted/50"> — </span>
+          <span class="min-w-0 flex-1">
+            <span class="block font-serif text-xl leading-snug transition-colors group-hover:text-accent">
+              Gitleaks Pre-push Gating & Secret Detection
+            </span>
+            <span class="block pt-1 text-sm leading-relaxed text-muted">
+              How to set up pre-push hooks to catch API keys and credentials before they reach the main branch.
+            </span>
+          </span>
+        </a>
+      </article>
+
+      <article class="border-b border-border">
+        <a href="#" class="group flex items-baseline gap-3 py-4 sm:gap-4">
+          <time class="w-28 shrink-0 font-mono text-sm whitespace-nowrap text-muted">
+            Nov 02, 2026
+          </time>
+          <span aria-hidden="true" class="text-muted/50"> — </span>
+          <span class="min-w-0 flex-1">
+            <span class="block font-serif text-xl leading-snug transition-colors group-hover:text-accent">
+              Astro Islands & Client Directives
+            </span>
+            <span class="block pt-1 text-sm leading-relaxed text-muted">
+              Understanding client:load, client:only, and how partial hydration keeps interactive apps performant.
+            </span>
+          </span>
+        </a>
+      </article>
+
+      <article class="border-b border-border">
+        <a href="#" class="group flex items-baseline gap-3 py-4 sm:gap-4">
+          <time class="w-28 shrink-0 font-mono text-sm whitespace-nowrap text-muted">
+            Oct 28, 2026
+          </time>
+          <span aria-hidden="true" class="text-muted/50"> — </span>
+          <span class="min-w-0 flex-1">
+            <span class="block font-serif text-xl leading-snug transition-colors group-hover:text-accent">
+              Tailwind CSS Variables & Theming
+            </span>
+            <span class="block pt-1 text-sm leading-relaxed text-muted">
+              Setting up smooth dark and light mode transitions using native CSS custom properties.
+            </span>
+          </span>
+        </a>
+      </article>
+    </div>
+  </main>
+  
+  <Footer client:only="react" />
+</Layout>

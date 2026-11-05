@@ -46,7 +46,7 @@ export default function FloatingNavbar() {
     { href: '/', label: t.nav.home },
     { href: '/now', label: t.nav.now },
     { href: '/uses', label: t.nav.uses },
-    { href: '/uses', label: 'TIL' },
+    { href: '/til', label: 'TIL' },
     { href: '/contact', label: t.nav.contact },
   ];
 
