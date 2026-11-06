@@ -14,33 +14,33 @@ const c = t.colophon;
       <h1 class="text-2xl sm:text-3xl font-medium leading-tight tracking-tight mb-3">
         {c.title}
       </h1>
-      <p class="text-base text-muted leading-relaxed">
+      <p class="max-w-[70ch] text-base text-muted leading-relaxed">
         {c.desc}
       </p>
     </div>
 
-    <section class="mb-12">
+    <section class="mb-16">
       <h2 class="font-mono text-[10px] uppercase tracking-[0.2em] text-muted mb-8">
         {c.built}
       </h2>
-      <div class="space-y-6">
-        <div class="grid grid-cols-1 sm:grid-cols-[8rem_minmax(0,1fr)] gap-6">
+      <div class="divide-y divide-border">
+        <div class="grid gap-1 py-6 sm:grid-cols-[8rem_minmax(0,1fr)] sm:gap-8">
           <p class="font-medium text-sm text-fg">{c.framework}</p>
           <p class="text-sm text-muted leading-relaxed">{c.frameworkDesc}</p>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-[8rem_minmax(0,1fr)] gap-6">
+        <div class="grid gap-1 py-6 sm:grid-cols-[8rem_minmax(0,1fr)] sm:gap-8">
           <p class="font-medium text-sm text-fg">{c.styling}</p>
           <p class="text-sm text-muted leading-relaxed">{c.stylingDesc}</p>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-[8rem_minmax(0,1fr)] gap-6">
+        <div class="grid gap-1 py-6 sm:grid-cols-[8rem_minmax(0,1fr)] sm:gap-8">
           <p class="font-medium text-sm text-fg">{c.language}</p>
           <p class="text-sm text-muted leading-relaxed">{c.languageDesc}</p>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-[8rem_minmax(0,1fr)] gap-6">
+        <div class="grid gap-1 py-6 sm:grid-cols-[8rem_minmax(0,1fr)] sm:gap-8">
           <p class="font-medium text-sm text-fg">{c.backend}</p>
           <p class="text-sm text-muted leading-relaxed">{c.backendDesc}</p>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-[8rem_minmax(0,1fr)] gap-6">
+        <div class="grid gap-1 py-6 sm:grid-cols-[8rem_minmax(0,1fr)] sm:gap-8">
           <p class="font-medium text-sm text-fg">{c.content}</p>
           <p class="text-sm text-muted leading-relaxed">{c.contentDesc}</p>
         </div>
