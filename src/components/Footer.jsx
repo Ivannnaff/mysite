@@ -62,16 +62,19 @@ export default function Footer() {
             <ul className="space-y-2">
               {siteData.links.resources.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
-                    target={link.external ? '_blank' : undefined}
-                    rel={link.external ? 'noopener noreferrer' : undefined}
+                  <a 
+                    href={link.href} 
+                    target={link.external ? "_blank" : undefined} 
+                    rel={link.external ? "noopener noreferrer" : undefined} 
                     className="inline-flex items-center gap-1 text-muted hover:text-fg transition-colors"
                   >
                     {link.label} {link.external && <span>↗</span>}
                   </a>
                 </li>
               ))}
+              <li>
+                <a href="/colophon" className="text-muted hover:text-fg transition-colors">Colophon</a>
+              </li>
             </ul>
           </div>
           <div>

@@ -136,7 +136,33 @@ export const translations = {
     contact: {
       title: "Contact",
       subtitle: "Get in touch or connect across the web.",
-    }
+    },
+    colophon: {
+      title: "Colophon",
+      desc: "A colophon is a note on how a book was made. This is that note for this site: the tools it is built with, and the people whose work lit the way. The list is honest but incomplete.",
+      built: "How it's built",
+      framework: "Framework",
+      frameworkDesc: "Astro 7 with React islands. Static pages with no client JavaScript by default.",
+      styling: "Styling",
+      stylingDesc: "Tailwind CSS over design tokens; Inter for UI, JetBrains Mono for code and labels.",
+      language: "Language",
+      languageDesc: "TypeScript throughout, checked strict.",
+      backend: "Backend",
+      backendDesc: "Static site hosted on Vercel.",
+      content: "Content",
+      contentDesc: "Markdown and Astro pages, with an RSS feed and a sitemap.",
+      inspiration: "Inspiration",
+      inspirationList: [
+        { name: "Lee Robinson", url: "https://leerob.io" },
+        { name: "Dan Abramov", url: "https://overreacted.io" },
+        { name: "Guillermo Rauch", url: "https://rauchg.com" },
+        { name: "Emil Kowalski", url: "https://emilkowal.ski" },
+        { name: "Anthony Fu", url: "https://fu.me" },
+        { name: "Dominik Dorfmeister", url: "https://tkdodo.eu" },
+        { name: "Abdul Malik", url: "https://up2dul.dev" },
+        { name: "Rizki Citra", url: "https://rimzzlabs.com" },
+      ],
+    },
   },
   id: {
     nav: {
@@ -271,6 +297,32 @@ export const translations = {
           note: "Mahasiswa aktif yang berfokus pada rekayasa perangkat lunak dan teknologi web."
         }
       ]
+    },
+    colophon: {
+      title: "Kolofon",
+      desc: "Kolofon adalah catatan tentang bagaimana sebuah buku dibuat. Ini adalah catatan itu untuk situs ini: alat yang digunakan, dan orang-orang yang menerangi jalan. Daftar ini jujur namun tidak lengkap.",
+      built: "Cara Dibangun",
+      framework: "Framework",
+      frameworkDesc: "Astro 7 dengan React islands. Halaman statis tanpa JavaScript klien secara default.",
+      styling: "Styling",
+      stylingDesc: "Tailwind CSS dengan design tokens; Inter untuk UI, JetBrains Mono untuk kode dan label.",
+      language: "Bahasa",
+      languageDesc: "TypeScript di seluruh bagian, diperiksa secara strict.",
+      backend: "Backend",
+      backendDesc: "Situs statis dihosting di Vercel.",
+      content: "Konten",
+      contentDesc: "Halaman Markdown dan Astro, dengan RSS feed dan sitemap.",
+      inspiration: "Inspirasi",
+      inspirationList: [
+        { name: "Lee Robinson", url: "https://leerob.io" },
+        { name: "Dan Abramov", url: "https://overreacted.io" },
+        { name: "Guillermo Rauch", url: "https://rauchg.com" },
+        { name: "Emil Kowalski", url: "https://emilkowal.ski" },
+        { name: "Anthony Fu", url: "https://fu.me" },
+        { name: "Dominik Dorfmeister", url: "https://tkdodo.eu" },
+        { name: "Abdul Malik", url: "https://up2dul.dev" },
+        { name: "Rizki Citra", url: "https://rimzzlabs.com" },
+      ],
     },
     contact: {
       title: "Kontak",
