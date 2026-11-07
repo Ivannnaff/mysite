@@ -1,52 +1,56 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Footer from '../components/Footer.jsx';
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.jsx";
 
 const learning = [
-  {
-    name: 'TypeScript',
-    desc: 'Adding static types and interfaces to keep code safer and easier to refactor.',
-  },
-  {
-    name: 'Laravel & PHP',
-    desc: 'Backend structure, database migrations, and building REST APIs.',
-  },
-  {
-    name: 'React & Next.js',
-    desc: 'Building interactive interfaces, managing state, and server-side rendering.',
-  },
-  {
-    name: 'Docker',
-    desc: 'Containerizing applications for consistent environments and simpler deployments.',
-  },
-  {
-    name: 'Astro & Tailwind CSS',
-    desc: 'Building fast static sites with utility-first styling.',
-  },
+    {
+        name: "TypeScript",
+        desc: "Adding static types and interfaces to keep code safer and easier to refactor.",
+    },
+    {
+        name: "Laravel & PHP",
+        desc: "Backend structure, database migrations, and building REST APIs.",
+    },
+    {
+        name: "React & Next.js",
+        desc: "Building interactive interfaces, managing state, and server-side rendering.",
+    },
+    {
+        name: "Docker",
+        desc: "Containerizing applications for consistent environments and simpler deployments.",
+    },
+    {
+        name: "Astro & Tailwind CSS",
+        desc: "Building fast static sites with utility-first styling.",
+    },
 ];
 ---
 
 <Layout title="TIL — Ivan Akbar">
-  <main class="max-w-2xl mx-auto px-6 py-16">
-    <h1 class="text-2xl sm:text-3xl font-medium leading-tight tracking-tight mb-2">
-      TIL
-    </h1>
+    <main class="max-w-2xl mx-auto px-6 py-16">
+        <h1 class="text-xl sm:text-2xl font-medium leading-tight tracking-tight mb-2">
+            TIL
+        </h1>
 
-    <p class="max-w-[70ch] text-lg leading-relaxed text-muted">
-      A short list of what I'm learning and working with right now.
-    </p>
+        <p class="max-w-[70ch] text-sm leading-relaxed text-muted">
+            A short list of what I'm learning and working with right now.
+        </p>
 
-    <hr class="my-12 border-border" />
+        <hr class="my-12 border-border" />
 
-    <div class="divide-y divide-border">
-      {learning.map((item) => (
-        <section class="py-6">
-          <h2 class="text-lg font-medium text-fg mb-2">{item.name}</h2>
-          <p class="max-w-[70ch] text-sm leading-relaxed text-muted">{item.desc}</p>
-        </section>
-      ))}
-    </div>
-  </main>
+        <div class="divide-y divide-border">
+            {learning.map((item) => (
+                <section class="py-6">
+                    <h2 class="text-base font-medium text-fg mb-1.5">
+                        {item.name}
+                    </h2>
+                    <p class="max-w-[70ch] text-sm leading-relaxed text-muted">
+                        {item.desc}
+                    </p>
+                </section>
+            ))}
+        </div>
+    </main>
 
-  <Footer client:only="react" />
+    <Footer client:only="react" />
 </Layout>

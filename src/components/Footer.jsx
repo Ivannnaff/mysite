@@ -23,7 +23,7 @@ export default function Footer() {
     { label: 'Home', href: '/' },
     { label: 'Now', href: '/now' },
     { href: '/uses', label: 'Uses' },
-    { href: '/uses', label: 'TIL' },
+    { href: '/til', label: 'TIL' },
     { label: 'Contact', href: '/contact' },
   ];
 

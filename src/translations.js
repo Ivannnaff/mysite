@@ -70,30 +70,30 @@ export const translations = {
     },
     uses: {
       title: "Uses",
-      intro: "Software, hardware, and gadgets I use daily to build things.",
+      intro: "The apps I open every day.",
       sections: [
         {
-          label: "Development",
+          label: "Code",
           items: [
-            { name: "VS Code", note: "Primary code editor with One Dark Pro theme." },
-            { name: "Terminus / Git Bash", note: "Reliable terminal environment on Windows." },
-            { name: "Git & GitHub", note: "Version control and code hosting for every project." },
-            { name: "Vite & Astro", note: "Fast build tooling for modern web apps." },
+            { name: "VS Code", note: "Where nearly every project gets written, configured with One Dark Pro." },
           ]
         },
         {
-          label: "Hardware",
+          label: "Browser",
           items: [
-            { name: "Custom Laptop", note: "Equipped with 16GB RAM and SSD for fast compiling." },
-            { name: "Mechanical Keyboard", note: "Tactile switches for comfortable typing." },
-            { name: "External Monitor", note: "Extra screen real estate for code and references." },
+            { name: "Firefox", note: "Daily browsing and the first place I debug." },
           ]
         },
         {
-          label: "Productivity",
+          label: "Terminal",
           items: [
-            { name: "Notion", note: "Notes, planning, and project tracking in one place." },
-            { name: "Brave", note: "Daily browser with built-in privacy protection." },
+            { name: "Bash", note: "Git, package managers, and local servers all run from here." },
+          ]
+        },
+        {
+          label: "Daily",
+          items: [
+            { name: "Orca", note: "In the daily rotation alongside everything above." },
           ]
         }
       ]
@@ -139,10 +139,10 @@ export const translations = {
     },
     colophon: {
       title: "Colophon",
-      desc: "A colophon is a note on how a book was made. This is that note for this site: the tools it is built with, and the people whose work lit the way. The list is honest but incomplete.",
+      desc: "A colophon is a note on how a book was made. This is that note for this site: the tools it is built with, and the people whose work lit the way. The list is honest but incomplete — many more developers shaped this site than I can name.",
       built: "How it's built",
       framework: "Framework",
-      frameworkDesc: "Astro 7 with React islands. Static pages with no client JavaScript by default.",
+      frameworkDesc: "Astro 7 with React islands. Static pages in two languages with hover prefetch.",
       styling: "Styling",
       stylingDesc: "Tailwind CSS over design tokens; Inter for UI, JetBrains Mono for code and labels.",
       language: "Language",
@@ -152,13 +152,16 @@ export const translations = {
       content: "Content",
       contentDesc: "Markdown and Astro pages, with an RSS feed and a sitemap.",
       inspiration: "Inspiration",
+      inspirationDesc: "Many people shaped this site. These are some of them — and there are many more developers whose sites I can no longer name.",
       inspirationList: [
+        { name: "Rafif Hardja", url: "https://rafifhardja.xyz" },
         { name: "Lee Robinson", url: "https://leerob.io" },
         { name: "Dan Abramov", url: "https://overreacted.io" },
         { name: "Guillermo Rauch", url: "https://rauchg.com" },
         { name: "Emil Kowalski", url: "https://emilkowal.ski" },
-        { name: "Anthony Fu", url: "https://fu.me" },
+        { name: "Anthony Fu", url: "https://antfu.me" },
         { name: "Dominik Dorfmeister", url: "https://tkdodo.eu" },
+        { name: "Rizzky", url: "https://rizzky.xyz" },
         { name: "Abdul Malik", url: "https://up2dul.dev" },
         { name: "Rizki Citra", url: "https://rimzzlabs.com" },
       ],
@@ -235,30 +238,30 @@ export const translations = {
     },
     uses: {
       title: "Alat",
-      intro: "Perangkat lunak, perangkat keras, dan gadget yang saya gunakan sehari-hari.",
+      intro: "Aplikasi yang saya buka setiap hari.",
       sections: [
         {
-          label: "Pengembangan",
+          label: "Kode",
           items: [
-            { name: "VS Code", note: "Editor kode utama dengan tema One Dark Pro." },
-            { name: "Terminus / Git Bash", note: "Lingkungan terminal andalan di Windows." },
-            { name: "Git & GitHub", note: "Version control dan hosting kode untuk setiap proyek." },
-            { name: "Vite & Astro", note: "Build tool cepat untuk aplikasi web modern." },
+            { name: "VS Code", note: "Tempat hampir semua proyek ditulis, dengan tema One Dark Pro." },
           ]
         },
         {
-          label: "Perangkat",
+          label: "Browser",
           items: [
-            { name: "Laptop", note: "Dilengkapi RAM 16GB dan SSD untuk kompilasi cepat." },
-            { name: "Mechanical Keyboard", note: "Switch taktil untuk kenyamanan mengetik." },
-            { name: "Monitor Eksternal", note: "Ruang layar tambahan untuk kode dan referensi." },
+            { name: "Firefox", note: "Untuk browsing harian dan tempat pertama saya debugging." },
           ]
         },
         {
-          label: "Produktivitas",
+          label: "Terminal",
           items: [
-            { name: "Notion", note: "Catatan, perencanaan, dan pelacakan proyek dalam satu tempat." },
-            { name: "Brave", note: "Browser harian dengan perlindungan privasi bawaan." },
+            { name: "Bash", note: "Git, package manager, dan server lokal semuanya dijalankan dari sini." },
+          ]
+        },
+        {
+          label: "Harian",
+          items: [
+            { name: "Orca", note: "Dipakai setiap hari bersama semua alat di atas." },
           ]
         }
       ]
@@ -300,10 +303,10 @@ export const translations = {
     },
     colophon: {
       title: "Kolofon",
-      desc: "Kolofon adalah catatan tentang bagaimana sebuah buku dibuat. Ini adalah catatan itu untuk situs ini: alat yang digunakan, dan orang-orang yang menerangi jalan. Daftar ini jujur namun tidak lengkap.",
+      desc: "Kolofon adalah catatan tentang bagaimana sebuah buku dibuat. Ini adalah catatan itu untuk situs ini: alat yang digunakan, dan orang-orang yang menerangi jalan. Daftar ini jujur namun tidak lengkap — banyak pengembang lain yang membentuk situs ini yang tidak dapat saya sebutkan satu persatu.",
       built: "Cara Dibangun",
       framework: "Framework",
-      frameworkDesc: "Astro 7 dengan React islands. Halaman statis tanpa JavaScript klien secara default.",
+      frameworkDesc: "Astro 7 dengan React islands. Halaman statis dalam dua bahasa dengan hover prefetch.",
       styling: "Styling",
       stylingDesc: "Tailwind CSS dengan design tokens; Inter untuk UI, JetBrains Mono untuk kode dan label.",
       language: "Bahasa",
@@ -313,13 +316,16 @@ export const translations = {
       content: "Konten",
       contentDesc: "Halaman Markdown dan Astro, dengan RSS feed dan sitemap.",
       inspiration: "Inspirasi",
+      inspirationDesc: "Banyak orang yang membentuk situs ini. Ini adalah beberapa di antaranya — serta masih banyak pengembang lain yang situsnya tidak dapat saya sebutkan lagi.",
       inspirationList: [
+        { name: "Rafif Hardja", url: "https://rafifhardja.xyz" },
         { name: "Lee Robinson", url: "https://leerob.io" },
         { name: "Dan Abramov", url: "https://overreacted.io" },
         { name: "Guillermo Rauch", url: "https://rauchg.com" },
         { name: "Emil Kowalski", url: "https://emilkowal.ski" },
-        { name: "Anthony Fu", url: "https://fu.me" },
+        { name: "Anthony Fu", url: "https://antfu.me" },
         { name: "Dominik Dorfmeister", url: "https://tkdodo.eu" },
+        { name: "Rizzky", url: "https://rizzky.xyz" },
         { name: "Abdul Malik", url: "https://up2dul.dev" },
         { name: "Rizki Citra", url: "https://rimzzlabs.com" },
       ],

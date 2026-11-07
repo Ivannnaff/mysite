@@ -23,11 +23,11 @@ export default function UsesPage() {
 
   return (
     <main className="max-w-2xl mx-auto px-6 py-16">
-      <h1 className="text-2xl sm:text-3xl font-medium leading-tight tracking-tight mb-2">
+      <h1 className="text-xl sm:text-2xl font-medium leading-tight tracking-tight mb-2">
         {uses.title}
       </h1>
 
-      <p className="max-w-[70ch] text-lg leading-relaxed text-muted">
+      <p className="max-w-[70ch] text-sm leading-relaxed text-muted">
         {uses.intro}
       </p>
 
@@ -36,14 +36,14 @@ export default function UsesPage() {
       <div className="divide-y divide-border">
         {uses.sections.map((section, idx) => (
           <section key={idx} className="grid gap-3 py-8 sm:grid-cols-[8rem_minmax(0,1fr)] sm:gap-8">
-            <p className="pt-1 font-mono text-sm text-muted">{section.label}</p>
+            <p className="pt-0.5 font-mono text-xs text-muted">{section.label}</p>
             <div>
               <ul className="space-y-6">
                 {section.items.map((item, itemIdx) => (
                   <li key={itemIdx}>
-                    <p className="font-medium text-fg">{item.name}</p>
+                    <p className="text-base font-medium text-fg">{item.name}</p>
                     {item.note && (
-                      <p className="mt-1 max-w-[70ch] leading-relaxed text-muted">
+                      <p className="mt-1 max-w-[70ch] text-sm leading-relaxed text-muted">
                         {item.note}
                       </p>
                     )}
