@@ -79,6 +79,12 @@ export const translations = {
           ]
         },
         {
+          label: "API",
+          items: [
+            { name: "Postman", note: "Testing and documenting APIs before they ship." },
+          ]
+        },
+        {
           label: "Browser",
           items: [
             { name: "Firefox", note: "Daily browsing and the first place I debug." },
@@ -135,7 +141,18 @@ export const translations = {
     },
     contact: {
       title: "Contact",
-      subtitle: "Get in touch or connect across the web.",
+      subtitle: "Get in touch or send a message directly.",
+      nameLabel: "Name",
+      emailLabel: "Email",
+      messageLabel: "Message",
+      sendButton: "Send Message",
+      sendingButton: "Sending…",
+      successMessage: "Thank you! Your message has been sent successfully.",
+      namePlaceholder: "Your name",
+      emailPlaceholder: "your@email.com",
+      messagePlaceholder: "What would you like to say?",
+      captchaRequired: "Please complete the verification first.",
+      verificationFailed: "Verification failed. Please try again.",
     },
     colophon: {
       title: "Colophon",
@@ -247,6 +264,12 @@ export const translations = {
           ]
         },
         {
+          label: "API",
+          items: [
+            { name: "Postman", note: "Menguji dan mendokumentasikan API sebelum dirilis." },
+          ]
+        },
+        {
           label: "Browser",
           items: [
             { name: "Firefox", note: "Untuk browsing harian dan tempat pertama saya debugging." },
@@ -332,7 +355,18 @@ export const translations = {
     },
     contact: {
       title: "Kontak",
-      subtitle: "Hubungi saya atau terhubung melalui web.",
+      subtitle: "Hubungi saya atau kirim pesan secara langsung.",
+      nameLabel: "Nama",
+      emailLabel: "Email",
+      messageLabel: "Pesan",
+      sendButton: "Kirim Pesan",
+      sendingButton: "Mengirim…",
+      successMessage: "Terima kasih! Pesan Anda berhasil dikirim.",
+      namePlaceholder: "Nama Anda",
+      emailPlaceholder: "anda@email.com",
+      messagePlaceholder: "Apa yang ingin Anda sampaikan?",
+      captchaRequired: "Silakan selesaikan verifikasi terlebih dahulu.",
+      verificationFailed: "Verifikasi gagal. Silakan coba lagi.",
     }
   }
 };
