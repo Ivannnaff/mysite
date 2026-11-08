@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { translations } from '../translations';
 
-const CONTACT_EMAIL = 'ivanalfa647@gmail.com';
 const TURNSTILE_SITE_KEY =
   import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '0x4AAAAAAF3pnHZWzpxYJ6Bu';
 
@@ -85,38 +84,24 @@ export default function ContactForm() {
     setErrorMessage('');
     setStatus('sending');
 
-    if (!import.meta.env.DEV) {
-      try {
-        const res = await fetch('/api/verify-turnstile', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ token }),
-        });
-        const outcome = await res.json();
-        if (!res.ok || !outcome.success) {
-          setStatus('idle');
-          setErrorMessage(t.verificationFailed);
-          if (widgetIdRef.current && window.turnstile) {
-            window.turnstile.reset(widgetIdRef.current);
-          }
-          setToken('');
-          return;
-        }
-      } catch {
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...form, token }),
+      });
+      const outcome = await res.json();
+
+      if (!res.ok || !outcome.success) {
         setStatus('idle');
-        setErrorMessage(t.verificationFailed);
+        setErrorMessage(t.sendFailed);
+        if (widgetIdRef.current && window.turnstile) {
+          window.turnstile.reset(widgetIdRef.current);
+        }
+        setToken('');
         return;
       }
-    }
 
-    const subject = encodeURIComponent(`Website contact from ${form.name}`);
-    const body = encodeURIComponent(
-      `${form.message}\n\n— ${form.name} (${form.email})`
-    );
-
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-
-    window.setTimeout(() => {
       setStatus('success');
       setForm({ name: '', email: '', message: '' });
       setToken('');
@@ -125,7 +110,10 @@ export default function ContactForm() {
           window.turnstile.reset(widgetIdRef.current);
         } catch {}
       }
-    }, 600);
+    } catch {
+      setStatus('idle');
+      setErrorMessage(t.sendFailed);
+    }
   };
 
   const inputClass =

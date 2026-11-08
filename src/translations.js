@@ -152,7 +152,7 @@ export const translations = {
       emailPlaceholder: "your@email.com",
       messagePlaceholder: "What would you like to say?",
       captchaRequired: "Please complete the verification first.",
-      verificationFailed: "Verification failed. Please try again.",
+      sendFailed: "Couldn't send your message. Please try again or email me directly.",
     },
     colophon: {
       title: "Colophon",
@@ -366,7 +366,7 @@ export const translations = {
       emailPlaceholder: "anda@email.com",
       messagePlaceholder: "Apa yang ingin Anda sampaikan?",
       captchaRequired: "Silakan selesaikan verifikasi terlebih dahulu.",
-      verificationFailed: "Verifikasi gagal. Silakan coba lagi.",
+      sendFailed: "Pesan gagal dikirim. Silakan coba lagi atau email saya langsung.",
     }
   }
 };
